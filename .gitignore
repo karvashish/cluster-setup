@@ -1,0 +1,24 @@
+# Ansible cache and retry files
+*.retry
+*.log
+*.out
+
+# Ansible facts cache
+.fact_cache/
+*.fact
+
+# Roles installed via galaxy
+roles/
+collections/
+
+# Vault password files
+.vault_pass.txt
+.vault_pass*
+
+# SSH related
+*.pem
+*.pub
+.ssh/
+
+# Local inventory
+hosts.ini
