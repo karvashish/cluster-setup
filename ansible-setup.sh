@@ -95,8 +95,10 @@ mkdir -p "$PROJECT_DIR"
 
 if [[ ! -f "$PROJECT_DIR/hosts.ini" ]]; then
   {
-    echo "[$GROUP_NAME]"
+    echo "[controller]"
     echo "$CONTROL_HOSTNAME ansible_connection=local ansible_user=$SSH_USER ansible_host=$CONTROL_IP"
+    echo
+    echo "[$GROUP_NAME]"
     for ((i=0; i<${#NODES[@]}; i+=2)); do
       host="${NODES[i]}"; ip="${NODES[i+1]}"
       echo "$host ansible_user=$SSH_USER ansible_host=$ip"
